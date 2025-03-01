@@ -16,47 +16,32 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 20px;
-            overflow: auto;
-            animation: fadeIn 2s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            margin: 0;
         }
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             background: -webkit-linear-gradient(left, #ff9a9e, #fad0c4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: slideIn 1.5s ease-in-out;
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
         p {
             font-size: 1.2em;
             max-width: 700px;
             margin-bottom: 20px;
-            opacity: 0.9;
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
-            padding: 20px;
+            width: 100%;
             max-width: 1000px;
-            animation: popIn 1.5s ease-in-out 1.5s forwards;
-        }
-        @keyframes popIn {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            padding: 20px;
         }
         .card {
-            width: 150px;
+            width: 100%;
             height: 200px;
             perspective: 1200px;
             cursor: pointer;
@@ -64,7 +49,7 @@
             transition: transform 0.3s ease-in-out;
         }
         .card:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .card-inner {
             width: 100%;
@@ -102,13 +87,26 @@
         .footer {
             margin-top: 20px;
             font-size: 1.2em;
-            opacity: 0.8;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .card {
+                height: 150px;
+            }
+            .card-front, .card-back {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <h1>PIEDS Student Team Recruitment</h1>
-    <p>After 45 days of intense competition, 330 candidates battled through 4 challenging rounds. Only 15 emerged victorious, securing a coveted spot on the PIEDS Student Team.</p>
+    <p>After 45 days of intense competition, 330 candidates battled through 4 challenging rounds. Only a few emerged victorious, securing a coveted spot on the PIEDS Student Team.</p>
     <p>The journey was filled with resilience, learning, and a thrilling ₹25K cash prize. More than winning, it was about growth, experiences, and pushing limits.</p>
     
     <div class="container" id="cardContainer"></div>
@@ -118,8 +116,8 @@
     <script>
         const candidates = [
             "Alhan Santani", "Jiya Sethi", "Siddharth Sudunagunta", "Harshit Saini", "Krrish Narayan",
-            "Mithilesh Babu", "Chaitanya Goyal", "Prisha Singhal", "Pushti Shah", "Pritish Aggrawal",
-            "Parva Doshi", "Srijan Sahay", "Sarvesh Prakash", "Avinash Saraf", "Tushar Kakwani"
+            "Mithilesh Babu", "Chaitanya Goyal", "Prisha Singhal", "Shreyashi", "Pritish Aggrawal",
+            "Kushagra Aggarwal", "Srijan Sahay", "Sarvesh Prakash", "Avinash Saraf", "Tushar Kakwani"
         ];
         const container = document.getElementById("cardContainer");
         
