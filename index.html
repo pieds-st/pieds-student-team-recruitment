@@ -16,32 +16,47 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 20px;
-            margin: 0;
+            overflow: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin-bottom: 10px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             background: -webkit-linear-gradient(left, #ff9a9e, #fad0c4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         p {
             font-size: 1.2em;
             max-width: 700px;
             margin-bottom: 20px;
+            opacity: 0.9;
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 20px;
-            width: 100%;
-            max-width: 1000px;
             padding: 20px;
+            max-width: 1000px;
+            animation: popIn 1.5s ease-in-out 1.5s forwards;
+        }
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         .card {
-            width: 100%;
+            width: 150px;
             height: 200px;
             perspective: 1200px;
             cursor: pointer;
@@ -49,7 +64,7 @@
             transition: transform 0.3s ease-in-out;
         }
         .card:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .card-inner {
             width: 100%;
@@ -87,20 +102,7 @@
         .footer {
             margin-top: 20px;
             font-size: 1.2em;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1em;
-            }
-            .card {
-                height: 150px;
-            }
-            .card-front, .card-back {
-                font-size: 1em;
-            }
+            opacity: 0.8;
         }
     </style>
 </head>
